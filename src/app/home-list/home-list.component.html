@@ -1,0 +1,16 @@
+<div class="material-card-wide mdl-card mdl-shadow--2dp">
+  <div class="list-card-body">
+    <mat-grid-list cols="3" rowHeight="70px">
+      <ul class="demo-list-icon mdl-list">
+        <mat-grid-tile [colspan]="1" *ngFor="let nav of navigation">  
+          <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content home-list-entities">
+              <i class="material-icons mdl-list__item-icon">play_arrow</i>
+              <a routerLink="{{nav.routerLink}}" style="text-decoration:  none">{{nav.title}}</a>
+            </span>
+          </li>
+        </mat-grid-tile>
+      </ul>
+    </mat-grid-list>
+  </div>
+</div>

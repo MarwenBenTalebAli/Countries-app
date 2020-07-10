@@ -1,0 +1,144 @@
+<div class="material-card-wide mdl-card mdl-shadow--2dp form-card">
+  <div class="mdl-card__title mdl-card--border">
+    <h2 class="mdl-card__title-text">{{ title }}</h2>
+  </div>
+  <form [formGroup]="form" novalidate (ngSubmit)="save()">
+    <div class="add-edit-form">
+      <mat-grid-list cols="2" rowHeight="70px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-input-container class="form-full-width">
+            <input matInput placeholder="code " formControlName="code">
+          </mat-input-container>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-input-container class="form-full-width">
+            <input matInput placeholder="name" required formControlName="name">
+            <mat-error *ngIf="!form.controls.name.valid">
+              name is required
+            </mat-error>
+          </mat-input-container>
+        </mat-grid-tile>	
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-input-container class="form-full-width">
+            <input matInput placeholder="continent" required formControlName="continent">
+            <mat-error *ngIf="!form.controls.continent.valid">
+              continent is required
+            </mat-error>
+          </mat-input-container>
+        </mat-grid-tile>	
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-input-container class="form-full-width">
+            <input matInput placeholder="region" required formControlName="region">
+            <mat-error *ngIf="!form.controls.region.valid">
+              region is required
+            </mat-error>
+          </mat-input-container>
+        </mat-grid-tile>	
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-input-container class="form-full-width">
+            <input matInput placeholder="surfacearea" required formControlName="surfacearea">
+            <mat-error *ngIf="!form.controls.surfacearea.valid">
+              surfacearea is required
+            </mat-error>
+          </mat-input-container>
+        </mat-grid-tile>	
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-input-container class="form-full-width">
+            <input matInput placeholder="indepyear" required formControlName="indepyear">
+            <mat-error *ngIf="!form.controls.indepyear.valid">
+              indepyear is required
+            </mat-error>
+          </mat-input-container>
+        </mat-grid-tile>	
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-input-container class="form-full-width">
+            <input matInput placeholder="population" required formControlName="population">
+            <mat-error *ngIf="!form.controls.population.valid">
+              population is required
+            </mat-error>
+          </mat-input-container>
+        </mat-grid-tile>	
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-input-container class="form-full-width">
+            <input matInput placeholder="lifeexpectancy" required formControlName="lifeexpectancy">
+            <mat-error *ngIf="!form.controls.lifeexpectancy.valid">
+              lifeexpectancy is required
+            </mat-error>
+          </mat-input-container>
+        </mat-grid-tile>	
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-input-container class="form-full-width">
+            <input matInput placeholder="gnp" required formControlName="gnp">
+            <mat-error *ngIf="!form.controls.gnp.valid">
+              gnp is required
+            </mat-error>
+          </mat-input-container>
+        </mat-grid-tile>	
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-input-container class="form-full-width">
+            <input matInput placeholder="gnpold" required formControlName="gnpold">
+            <mat-error *ngIf="!form.controls.gnpold.valid">
+              gnpold is required
+            </mat-error>
+          </mat-input-container>
+        </mat-grid-tile>	
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-input-container class="form-full-width">
+            <input matInput placeholder="localname" required formControlName="localname">
+            <mat-error *ngIf="!form.controls.localname.valid">
+              localname is required
+            </mat-error>
+          </mat-input-container>
+        </mat-grid-tile>	
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-input-container class="form-full-width">
+            <input matInput placeholder="governmentform" required formControlName="governmentform">
+            <mat-error *ngIf="!form.controls.governmentform.valid">
+              governmentform is required
+            </mat-error>
+          </mat-input-container>
+        </mat-grid-tile>	
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-input-container class="form-full-width">
+            <input matInput placeholder="headofstate" required formControlName="headofstate">
+            <mat-error *ngIf="!form.controls.headofstate.valid">
+              headofstate is required
+            </mat-error>
+          </mat-input-container>
+        </mat-grid-tile>	
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-input-container class="form-full-width">
+            <input matInput placeholder="capital" required formControlName="capital">
+            <mat-error *ngIf="!form.controls.capital.valid">
+              capital is required
+            </mat-error>
+          </mat-input-container>
+        </mat-grid-tile>	
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-input-container class="form-full-width">
+            <input matInput placeholder="code2" required formControlName="code2">
+            <mat-error *ngIf="!form.controls.code2.valid">
+              code2 is required
+            </mat-error>
+          </mat-input-container>
+        </mat-grid-tile>	
+      </mat-grid-list>
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <div class="card-footer-button form-button">
+        <button type="button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button" (click)="initForm()">
+          Reset
+        </button>
+        <button type="submit" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--primary" [disabled]="!form.valid">
+          Save
+        </button>
+        <button type="button" [disabled]="!country?.code" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--accent" (click)="deleteConfirmation()">
+          Delete
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="mdl-card__menu">
+    <a mat-raised-button class="card-header-button" [routerLink]="['/country-list']">Country list</a>
+  </div>
+</div>

@@ -1,0 +1,3 @@
+- Il s'agit d'un projet de gestion des pays en utilisant le framework Angular.
+- L'application Angular communique avec le serveur par les services RESTful. 
+- Durée de projet de 2020-05-25 à 2020-6-30.

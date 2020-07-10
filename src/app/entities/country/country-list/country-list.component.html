@@ -1,0 +1,76 @@
+<div class="material-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title mdl-card--border">
+    <h2 class="mdl-card__title-text">{{ title }}</h2>
+  </div>
+  <div class="list-card-body">
+    <table class="data-table-format">
+      <thead>
+        <tr>
+          <th>code</th>
+          <th>name</th>
+          <th>continent</th>
+          <th>region</th>
+          <th>surfacearea</th>
+          <th>indepyear</th>
+          <th>population</th>
+          <th>lifeexpectancy</th>
+          <th>gnp</th>
+          <th>gnpold</th>
+          <th>localname</th>
+          <th>governmentform</th>
+          <th>headofstate</th>
+          <th>capital</th>
+          <th>code2</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let country of pagedItems" (click)="editCountry(country.code)">
+          <th>{{ country.code }}</th>
+          <th>{{ country.name }}</th>
+          <th>{{ country.continent }}</th>
+          <th>{{ country.region }}</th>
+          <th>{{ country.surfacearea }}</th>
+          <th>{{ country.indepyear }}</th>
+          <th>{{ country.population }}</th>
+          <th>{{ country.lifeexpectancy }}</th>
+          <th>{{ country.gnp }}</th>
+          <th>{{ country.gnpold }}</th>
+          <th>{{ country.localname }}</th>
+          <th>{{ country.governmentform }}</th>
+          <th>{{ country.headofstate }}</th>
+          <th>{{ country.capital }}</th>
+          <th>{{ country.code2 }}</th>
+          <td width="5%" (click)="deleteConfirmation(country.code); $event.stopPropagation();">
+            <i class="material-icons delete-data-icon">delete_forever</i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- pager -->
+  <div class="mdl-paging" *ngIf="pager.pages && pager.pages.length">
+    <button [disabled]="pager.currentPage === 1"
+      class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+      (click)="setPage(pager.currentPage - 1)">
+      <i class="material-icons">keyboard_arrow_left</i>
+    </button>
+    <a *ngFor="let page of pager.pages" 
+      [class.selected]="pager.currentPage === page"
+      class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+      (click)="setPage(page)">
+      {{ page }}
+    </a>
+    <button [disabled]="pager.currentPage === pager.totalPages" 
+      class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+      (click)="setPage(pager.currentPage + 1)">
+      <i class="material-icons">keyboard_arrow_right</i>
+    </button>
+    <br />
+    <span class="paginationStats">Pages {{ pager.startPage }}-{{ this.pager.endPage }} of {{ pager.totalPages }}</span>
+  </div>
+  <div class="mdl-card__menu">
+    <a mat-raised-button class="card-header-button" routerLink="../country-form"><mat-icon>add</mat-icon>Add</a>
+  </div>
+</div>
